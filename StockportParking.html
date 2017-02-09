@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--- Jodi L. Hess, CSC423 Assignment #2 9/20/16 -->
+<html>
+<head>
+<meta name="description" content="[csc 423 Assgn #2]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Parking Permit Application for Stockport College</title>
+
+    <script type="text/javascript" src="jh.js"></script>
+
+</head>
+<body>
+
+  <h2>Welcome to Stockport College's Parking Permit Application!
+  </h2>
+
+
+  <!--- <form action="" method="post" name="parkingForm">
+
+
+ <hr />
+
+  Welcome to Stockport College’s Faculty/Staff Parking Permit Application.
+  We can only issue permits to people whose home address is in one of the
+  following states: NY, PA, CT, MA, NJ, VT.
+  Please fill out the information requested below correctly:
+  <br>
+  <br>
+  <b>Registrant Demographic information</b> <br>
+  <br>
+
+  -->
+
+ <form name="myForm" onsubmit="return validateForm();" method="post" >
+
+  <table>
+
+ <tr>
+
+    <td>First Name:     </td>
+    <td > <input type="text" name="Fname" id="Fname">  </td>
+
+
+    <td  align="right">M.I.:</td>
+    <td > <input type="text" name="MInitial" id="MInitial" maxlength="2" size="1"> </td>
+    <td align="right">Last Name:</td>
+    <td > <input type="text" name="Lname" id="Lname"> </td>
+
+</tr>
+
+
+<tr>
+
+     <td height="25 px"> Address 1:</td>
+     <td colspan="4"> <input type="text" name="Address1" id="Address1" size="50"> </td>
+          <!-- Column span != 4 -->
+
+</tr>
+
+
+<tr>
+     <td height="25 px"> </td>
+     <td><input type="text" name="Address2" id="Address2" size="50" colspan="4">
+  <!-- Column span != 4 -->  </td>
+
+ </tr>
+
+
+  <tr>
+     <td style="width:85px" height="25 px"> City: </td>
+     <td style="width:85px"> <input type="text" name="city" id="city"> </td>
+     <td style="width:10px"align="right">State:   </td>
+     <td style="width:85px">
+	  	<select name=“state” id="state">
+        <option>CT</option>
+        <option>MA</option>
+        <option>NJ</option>
+		    <option selected="selected"> NY</option>
+		    <option>PA</option>
+        <option>VT</option>
+      </select>
+    </td>
+     <td style="width:85px" align="right"> Zip (5-digit): </td>
+     <td style="width:40px" > <input type="text" name="Zip" id="Zip" maxlength="5" size="10"> </td>
+
+ </tr>
+    </table>
+
+    <hr />
+
+  <!------------------------------------------------------------->
+    <br>
+    <b>Driver Informaton
+    </b>
+	<br />
+	<br />
+
+	<table>
+<tr>
+	<td style="width:85px" height="25 px"> Date of Birth (mm/dd/yyyy):</td>
+
+	<td height="35 px"> <input type="text" name="month"  id="month" maxlength="2"  size="2"> &frasl;
+
+	<input type="text" name="day" id="day" maxlength="2" size="2"> &frasl;
+
+	<input type="text" name="year" id="year" maxlength="4" size="4">
+	</td>
+</tr>
+
+ <tr>
+    <td>Gender:
+	</td>
+    <td> <form action=“”>
+	  	<select name=“sex” id="sex">
+        <option>Male</option>
+        <option>Female</option>
+	</td>
+
+	<td>
+	 Marital Status:
+	 </td>
+
+	 <td> <form action=“”>
+	  	<select name=“maritalstatus” id="maritalstatus">
+        <option>Divorced</option>
+        <option>Married</option>
+		<option>Separated</option>
+        <option selected="selected"> Single</option>
+		<option>Widowed</option>
+     </td>
+
+</tr>
+
+  </table>
+
+  <br>
+  Please indicate number of convictions for traffic violations in the past 5 years:
+      <input type="text" name="violations" id="violations"  height="25 px" size="3">
+
+      <br /> <br>
+      <hr>
+      <br>
+   As per a 2012 agreement with the Faculty/Staff union, an individual with three or more
+  convictions for moving violations in the past 5 years will have a 20% premium added to the permit cost.
+
+  <br />
+  <br />
+
+  <hr>
+
+      <!------------------------------------------------------------->
+
+      <br>
+      <b> Car Information 1 </b> <br>
+      <br>
+<table>
+ <tr>
+   <td style="width:150px" >  Make:
+	  	<select name=“CarMake” id="CarMake">
+        <option selected="selected"> </option>
+        <option>Chevrolet</option>
+		<option>Ford</option>
+        <option>Honda</option>
+		<option>Kia</option>
+        <option>Pontiac</option>
+		<option>Toyota</option>
+		<option>Dodge</option>
+     </td>
+
+	<td style="width:150px" >  Model:
+	  	<select name=“CarModel” id="CarModel">
+        <option selected="selected"> </option>
+        <option>Accord</option>
+		<option>Camaro</option>
+        <option>Camry</option>
+		<option>Caprice</option>
+		<option>Caravan</option>
+        <option>Civic</option>
+		<option>Corolla</option>
+		<option>Edge</option>
+		<option>Equinox</option>
+        <option>Expedition</option>
+		<option>Fiesta</option>
+		<option>Optima</option>
+        <option>Odyssey</option>
+		<option>RAV4</option>
+		<option>Ram</option>
+		<option>Rondo</option>
+		<option>Traverse</option>
+		<option>Tahoe</option>
+		<option>Soul</option>
+        <option>Vibe</option>
+		<option>Volt</option>
+          </td>
+
+      <td>
+        Year: <td style="width:160px" > <input type="text" name="year" id="year" maxlength="4"> <td>
+        </td>
+          <td> Color: <input type="text" name="color" id="color" maxlength="12">
+      </td>
+ </tr>
+
+</table> <br>
+     Please indicate whether this car is to be brought to campus
+     during the day or evening, or both:
+
+   <br> <br>
+
+
+<table align="center">
+<tr>
+	 <td>
+	   Day:   <input type="checkbox" name="day" id="day">
+	 </td>
+	 <td>
+	   Night:   <input type="checkbox" name="night" id="night">
+	 </td>
+</tr>
+
+  </table>
+
+
+ <br>
+     <hr>
+
+     <!------------------------------------------------------------->
+
+     <br>
+     <b> Car Information 2 </b> <br>
+      <br>
+<table>
+ <tr>
+   <td style="width:150px" >  Make:
+	  	<select name=“CarMake” id="CarMake">
+        <option selected="selected"> </option>
+        <option>Chevrolet</option>
+		<option>Ford</option>
+        <option>Honda</option>
+		<option>Kia</option>
+        <option>Pontiac</option>
+		<option>Toyota</option>
+		<option>Dodge</option>
+     </td>
+
+	<td style="width:150px" > Model:
+	  	<select name=“CarModel” id="CarModel">
+        <option selected="selected"> </option>
+        <option>Accord</option>
+		<option>Camaro</option>
+        <option>Camry</option>
+		<option>Caprice</option>
+		<option>Caravan</option>
+        <option>Civic</option>
+		<option>Corolla</option>
+		<option>Edge</option>
+		<option>Equinox</option>
+        <option>Expedition</option>
+		<option>Fiesta</option>
+		<option>Optima</option>
+        <option>Odyssey</option>
+		<option>RAV4</option>
+		<option>Ram</option>
+		<option>Rondo</option>
+		<option>Traverse</option>
+		<option>Tahoe</option>
+		<option>Soul</option>
+        <option>Vibe</option>
+		<option>Volt</option>
+
+     </td>
+<td>
+        Year: <td style="width:160px" > <input type="text" name="year" id="year" maxlength="4"> <td>
+        </td>
+          <td> Color: <input type="text" name="color" id="color" maxlength="12">
+      </td>
+
+  </tr>
+ </table>
+
+  <br>
+     Please indicate whether this car is to be brought to campus
+     during the day or evening, or both:
+
+	 <br> <br>
+
+<table align="center">
+<tr>
+	 <td>
+	   Day:   <input type="checkbox" name="day" id="day">
+	 </td>
+	 <td>
+	   Night:   <input type="checkbox" name="night" id="night">
+	 </td>
+</tr>
+
+  </table>
+
+     <br>
+  <hr>
+
+   <!-------------------------------------------------------------------------->
+   <br>
+   <b> Salary Information </b>
+  <br> <br>
+As per the 2012 agreement with the Faculty/Staff Union, the rate you pay
+for your permit depends on your salary level. A combined day and evening permit
+for a faculty/staff member earning less than $ 20,000 costs $ 15/year,
+for example, whereas the same permit for a faculty/staff member earning
+greater than $ 80,000 is $ 45/year.
+<br> <br>
+Please indicate your salary level: <br>
+
+
+<table align="center">
+<tr>
+      <td>
+Less than $20,000
+  </td>
+  <td>
+        <input type="radio" name="salary" id="salary20" value="20k" checked>
+<td>
+</tr>
+
+<tr>
+   <td> Between $20,000 and $35,000 </>
+     <td> <input type="radio" name="salary" id="salary20-35"  value="salary20-35" >
+</td>
+</tr>
+
+<tr>
+      <td> Between $35,000 and $60,000 </td>
+   <td> <input type="radio" name="salary" id="salary35-60" value="salary35-60" >
+   </td>
+</tr>
+
+<tr>
+   <td>
+Between $60,000 and $80,000
+   </td>
+   <td> <input type="radio" name="salary" id="salary60-80" value="salary60-80" >
+   </td>
+
+</tr>
+
+<tr>
+   <td>  Greater than $80,000
+   </td>
+   <td> <input type="radio" name="salary" id="salary>80" value="salary>80">
+   </td>
+</tr>
+
+
+<tr> </tr>
+     <tr> </tr>
+<td style="height:40px">  <input align="right" type="submit" value="Submit">
+
+    <input type="reset" value="Reset">   </td>
+
+     </table>
+  </form>
+
+<br>
+
+  <hr>
+
+  <i> Last updated: September 20, 2016 / {Jodi L. Hess (jhess3@u.brockport.edu)}
+  </i>
+
+
+</body>
+</html>
